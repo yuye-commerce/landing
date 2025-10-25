@@ -4,7 +4,8 @@
   export let highlight: string;
   export let ctaText: string;
   export let ctaHref: string;
-  export let secondaryCta: { text: string; href: string } | undefined = undefined;
+  export let secondaryCta: { text: string; href: string } | undefined =
+    undefined;
   export let heroStats: Array<{ label: string; value: string }> = [];
 </script>
 
@@ -15,10 +16,13 @@
       <h1>{headline}</h1>
       <p class="hero-sub">{subheadline}</p>
       <div class="hero-cta">
-        <a class="btn" href={ctaHref}>{ctaText}</a>
-        {#if secondaryCta}
-          <a class="btn-secondary" href={secondaryCta.href}>{secondaryCta.text}</a>
-        {/if}
+        {ctaText}
+        <!-- <a class="btn" href={ctaHref}>{ctaText}</a> -->
+        <!-- {#if secondaryCta} -->
+        <!--   <a class="btn-secondary" href={secondaryCta.href} -->
+        <!--     >{secondaryCta.text}</a -->
+        <!--   > -->
+        <!-- {/if} -->
       </div>
       {#if heroStats.length}
         <div class="hero-stats">
@@ -115,7 +119,10 @@
     background: transparent;
     color: var(--color-primary);
     border: 1.5px solid rgba(0, 92, 230, 0.4);
-    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
   }
 
   .btn-secondary:hover {
@@ -130,7 +137,11 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     padding: 1.25rem;
     border-radius: 1rem;
-    background: linear-gradient(109deg, rgba(0, 92, 230, 0.1), rgba(0, 196, 140, 0.15));
+    background: linear-gradient(
+      109deg,
+      rgba(0, 92, 230, 0.1),
+      rgba(0, 196, 140, 0.15)
+    );
   }
 
   .stat {
@@ -157,11 +168,19 @@
   }
 
   .hero-visual::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 2rem -10% -10% 10%;
-    background: radial-gradient(circle at top right, rgba(0, 92, 230, 0.2), transparent 60%),
-      radial-gradient(circle at bottom left, rgba(0, 196, 140, 0.2), transparent 55%);
+    background: radial-gradient(
+        circle at top right,
+        rgba(0, 92, 230, 0.2),
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(0, 196, 140, 0.2),
+        transparent 55%
+      );
     z-index: -2;
   }
 
@@ -179,7 +198,11 @@
     display: flex;
     gap: 0.5rem;
     padding: 1.25rem;
-    background: linear-gradient(120deg, rgba(0, 92, 230, 0.08), rgba(0, 196, 140, 0.08));
+    background: linear-gradient(
+      120deg,
+      rgba(0, 92, 230, 0.08),
+      rgba(0, 196, 140, 0.08)
+    );
   }
 
   .hero-pulse {
@@ -227,7 +250,11 @@
 
   .bar {
     border-radius: 0.75rem 0.75rem 0.35rem 0.35rem;
-    background: linear-gradient(180deg, rgba(0, 92, 230, 1), rgba(0, 92, 230, 0.65));
+    background: linear-gradient(
+      180deg,
+      rgba(0, 92, 230, 1),
+      rgba(0, 92, 230, 0.65)
+    );
   }
 
   .bar-two {
@@ -236,7 +263,11 @@
 
   .bar-one {
     height: 35%;
-    background: linear-gradient(180deg, rgba(0, 196, 140, 1), rgba(0, 196, 140, 0.6));
+    background: linear-gradient(
+      180deg,
+      rgba(0, 196, 140, 1),
+      rgba(0, 196, 140, 0.6)
+    );
   }
 
   .bar-three {
