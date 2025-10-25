@@ -7,6 +7,8 @@
   export let secondaryCta: { text: string; href: string } | undefined =
     undefined;
   export let heroStats: Array<{ label: string; value: string }> = [];
+
+  import { Button } from "$lib/components/ui/button";
 </script>
 
 <section class="hero section">
@@ -16,7 +18,9 @@
       <h1>{headline}</h1>
       <p class="hero-sub">{subheadline}</p>
       <div class="hero-cta">
-        {ctaText}
+        <Button>
+          {ctaText}
+        </Button>
         <!-- <a class="btn" href={ctaHref}>{ctaText}</a> -->
         <!-- {#if secondaryCta} -->
         <!--   <a class="btn-secondary" href={secondaryCta.href} -->
@@ -35,33 +39,7 @@
         </div>
       {/if}
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-card">
-        <div class="hero-card-header">
-          <div class="hero-pulse"></div>
-          <div class="hero-pulse"></div>
-          <div class="hero-pulse"></div>
-        </div>
-        <div class="hero-card-body">
-          <div class="hero-chart">
-            <div class="bar bar-one"></div>
-            <div class="bar bar-two"></div>
-            <div class="bar bar-three"></div>
-            <div class="bar bar-four"></div>
-          </div>
-          <div class="hero-summary">
-            <div>
-              <span class="summary-label">Tăng trưởng</span>
-              <span class="summary-value">+28%</span>
-            </div>
-            <div>
-              <span class="summary-label">Đơn hàng tháng</span>
-              <span class="summary-value">12.4K</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="hero-visual" aria-hidden="true"></div>
   </div>
 </section>
 
