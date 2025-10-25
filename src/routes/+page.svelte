@@ -5,6 +5,18 @@
   import ClientsSection from "$lib/components/ClientsSection.svelte";
   import PlatformBadges from "$lib/components/PlatformBadges.svelte";
   import Footer from "$lib/components/Footer.svelte";
+  import Package from "@lucide/svelte/icons/package";
+  import FileText from "@lucide/svelte/icons/file-text";
+  import FileDown from "@lucide/svelte/icons/file-down";
+  import Zap from "@lucide/svelte/icons/zap";
+  import BarChart3 from "@lucide/svelte/icons/bar-chart-3";
+  import Users from "@lucide/svelte/icons/users";
+  import UserCog from "@lucide/svelte/icons/user-cog";
+  import CreditCard from "@lucide/svelte/icons/credit-card";
+  import RefreshCw from "@lucide/svelte/icons/refresh-cw";
+  import Tag from "@lucide/svelte/icons/tag";
+  import Calculator from "@lucide/svelte/icons/calculator";
+  import Truck from "@lucide/svelte/icons/truck";
 
   const heroData = {
     highlight: "Giải pháp quản lý bán hàng toàn diện",
@@ -22,9 +34,19 @@
       { label: "Mức độ hài lòng", value: "98%" },
       { label: "Thời gian triển khai", value: "3 ngày" },
     ],
+    heroFunctions: [
+      { icon: Package, title: "Quản lý kho hàng" },
+      { icon: FileText, title: "Quản lý hoá đơn" },
+      { icon: BarChart3, title: "Báo cáo doanh thu" },
+      { icon: Users, title: "Quản lý khách hàng" },
+      { icon: UserCog, title: "Quản lý nhân viên" },
+      { icon: CreditCard, title: "Thanh toán đa hình thức" },
+      { icon: RefreshCw, title: "Đồng bộ đa chi nhánh" },
+      { icon: Tag, title: "Quản lý khuyến mãi" },
+    ],
   };
 
-  const sectorTitle = "Ngành nghề KiotViet đồng hành";
+  const sectorTitle = "Ngành nghề HaloPOS đồng hành";
 
   const sectorDescription =
     "Dù bạn vận hành cửa hàng bán lẻ, chuỗi F&amp;B hay kho phân phối, bố cục này giúp giới thiệu nhanh các ngành kinh doanh được hỗ trợ.";

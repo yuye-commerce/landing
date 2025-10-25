@@ -5,9 +5,14 @@
   export let ctaText: string;
   export let ctaHref: string;
   export let heroStats: Array<{ label: string; value: string }> = [];
+  export let heroFunctions: Array<{
+    icon: any;
+    title: string;
+  }> = [];
 
   import { Button } from "$lib/components/ui/button";
   import Download from "@lucide/svelte/icons/download";
+  import * as Item from "$lib/components/ui/item/index.js";
 </script>
 
 <section class="hero section">
@@ -15,21 +20,36 @@
     <div class="hero-copy">
       <span class="hero-kicker">{highlight}</span>
       <h1>{headline}</h1>
+      <div class="hero-cta">
+        <Button size="lg" class="p-6">
+          <Download />
+          {ctaText}
+        </Button>
+      </div>
       <p class="hero-sub">{subheadline}</p>
+      <div class="hero-stats">
+        {#each heroStats as stat}
+          <div class="stat">
+            <span class="stat-value">{stat.value}</span>
+            <span class="stat-label">{stat.label}</span>
+          </div>
+        {/each}
+      </div>
     </div>
-    <div class="hero-stats">
-      {#each heroStats as stat}
-        <div class="stat">
-          <span class="stat-value">{stat.value}</span>
-          <span class="stat-label">{stat.label}</span>
-        </div>
+    <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-1 gap-4">
+      {#each heroFunctions as func}
+        <Item.Root
+          variant="outline"
+          class="bg-[linear-gradient(109deg,rgba(0,92,230,0.1),rgba(0,196,140,0.15))]"
+        >
+          <Item.Media variant="icon">
+            <svelte:component this={func.icon} />
+          </Item.Media>
+          <Item.Content>
+            <Item.Title>{func.title}</Item.Title>
+          </Item.Content>
+        </Item.Root>
       {/each}
-    </div>
-    <div class="hero-cta">
-      <Button size="lg" class="p-6">
-        <Download />
-        {ctaText}
-      </Button>
     </div>
   </div>
 </section>
@@ -76,8 +96,6 @@
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
-    justify-content: center;
-    grid-column: 1 / -1;
     width: 100%;
   }
 
