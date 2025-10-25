@@ -24,6 +24,11 @@
     ],
   };
 
+  const sectorTitle = "Ngành nghề KiotViet đồng hành";
+
+  const sectorDescription =
+    "Dù bạn vận hành cửa hàng bán lẻ, chuỗi F&amp;B hay kho phân phối, bố cục này giúp giới thiệu nhanh các ngành kinh doanh được hỗ trợ.";
+
   const sectors = [
     {
       title: "Bán lẻ & chuỗi cửa hàng",
@@ -101,23 +106,11 @@
     "An Khang Spa",
     "TechOne",
   ];
-
-  const storeBadges = [
-    { label: "App Store", caption: "Quản lý trên iOS" },
-    { label: "Google Play", caption: "Theo dõi mọi lúc" },
-    { label: "Windows", caption: "Phần mềm máy tính" },
-  ];
 </script>
 
 <Hero {...heroData} />
 
-<div class="section">
-  <div class="container">
-    <PlatformBadges badges={storeBadges} />
-  </div>
-</div>
-
-<SectorList {sectors} />
+<SectorList {sectorTitle} {sectorDescription} {sectors} />
 
 {#each features as feature (feature.title)}
   <FeatureSection {...feature} />

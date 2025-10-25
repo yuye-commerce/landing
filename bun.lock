@@ -3,6 +3,9 @@
   "workspaces": {
     "": {
       "name": "landing",
+      "dependencies": {
+        "lucide": "^0.548.0",
+      },
       "devDependencies": {
         "@internationalized/date": "^3.8.1",
         "@lucide/svelte": "^0.548.0",
@@ -271,6 +274,8 @@
     "lightningcss-win32-x64-msvc": ["lightningcss-win32-x64-msvc@1.30.2", "", { "os": "win32", "cpu": "x64" }, "sha512-5g1yc73p+iAkid5phb4oVFMB45417DkRevRbt/El/gKXJk4jid+vPFF/AXbxn05Aky8PapwzZrdJShv5C0avjw=="],
 
     "locate-character": ["locate-character@3.0.0", "", {}, "sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA=="],
+
+    "lucide": ["lucide@0.548.0", "", {}, "sha512-G9MtqYAKogbp23KCY+6jM/hQQLs9252z9IgmctZn2Fi95+ukR2jpXmUt4+y0q6bb9DrC+9P1jNymHLcyUgtapg=="],
 
     "lz-string": ["lz-string@1.5.0", "", { "bin": { "lz-string": "bin/bin.js" } }, "sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ=="],
 

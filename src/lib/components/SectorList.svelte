@@ -1,20 +1,23 @@
 <script lang="ts">
+  export let sectorTitle: string;
+  export let sectorDescription: string;
   export let sectors: Array<{ title: string; description: string }> = [];
 </script>
 
 <section class="section section-alt">
   <div class="container">
     <div class="section-heading">
-      <h2>Ngành nghề KiotViet đồng hành</h2>
+      <h2 class="font-bold text-2xl">
+        {sectorTitle}
+      </h2>
       <p>
-        Dù bạn vận hành cửa hàng bán lẻ, chuỗi F&amp;B hay kho phân phối, bố cục này giúp giới thiệu nhanh
-        các ngành kinh doanh được hỗ trợ.
+        {@html sectorDescription}
       </p>
     </div>
     <div class="sector-grid">
       {#each sectors as sector}
         <article class="sector-card">
-          <h3>{sector.title}</h3>
+          <h3 class="font-bold">{sector.title}</h3>
           <p>{sector.description}</p>
         </article>
       {/each}
@@ -40,7 +43,9 @@
     padding: 1.75rem;
     box-shadow: 0 20px 45px rgba(15, 68, 142, 0.08);
     border: 1px solid rgba(226, 232, 240, 0.8);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .sector-card:hover {
