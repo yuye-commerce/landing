@@ -6,7 +6,7 @@
 </script>
 
 <section class="my-16 flex flex-col items-center">
-  <div class="max-w-[900px]">
+  <div class="w-full max-w-[900px]">
     <h2 class="font-bold text-2xl text-center mb-8">
       {clientData.title}
     </h2>
