@@ -17,6 +17,10 @@
   import Tag from "@lucide/svelte/icons/tag";
   import Calculator from "@lucide/svelte/icons/calculator";
   import Truck from "@lucide/svelte/icons/truck";
+  import MousePointerClick from "@lucide/svelte/icons/mouse-pointer-click";
+  import Coffee from "@lucide/svelte/icons/coffee";
+  import Building2 from "@lucide/svelte/icons/building-2";
+  import Benefits from "$lib/components/Benefits.svelte";
 
   const heroData = {
     highlight: "Giải pháp quản lý bán hàng toàn diện",
@@ -43,6 +47,30 @@
       { icon: CreditCard, title: "Thanh toán đa hình thức" },
       { icon: RefreshCw, title: "Đồng bộ đa chi nhánh" },
       { icon: Tag, title: "Quản lý khuyến mãi" },
+    ],
+  };
+
+  const benefitData = {
+    header: "HaloPOS giúp bạn quản lý dễ dàng, bán hàng hiệu quả",
+    benefits: [
+      {
+        icon: MousePointerClick,
+        title: "Đơn giản & Dễ sử dụng",
+        description:
+          "Đồng bộ dữ liệu tồn kho, chuyển hàng liên chi nhánh và quản lý giá linh hoạt.",
+      },
+      {
+        icon: Coffee,
+        title: "F&B & giải trí",
+        description:
+          "Sơ đồ bàn, tính giờ, combo linh hoạt cùng báo cáo doanh thu từng khung giờ.",
+      },
+      {
+        icon: Building2,
+        title: "Nhà phân phối & bán buôn",
+        description:
+          "Quản lý đơn hàng số lượng lớn, công nợ đối tác và báo cáo lợi nhuận theo SKU.",
+      },
     ],
   };
 
@@ -132,12 +160,8 @@
 
 <Hero {...heroData} />
 
+<Benefits {benefitData} />
+
 <SectorList {sectorTitle} {sectorDescription} {sectors} />
-
-{#each features as feature (feature.title)}
-  <FeatureSection {...feature} />
-{/each}
-
-<ClientsSection {...testimonial} {logos} />
 
 <Footer />
