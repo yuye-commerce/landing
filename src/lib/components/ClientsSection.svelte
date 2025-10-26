@@ -5,7 +5,7 @@
   };
 </script>
 
-<section class="my-16 flex flex-col items-center">
+<section class="my-16 flex flex-col items-center mx-12">
   <div class="w-full max-w-[900px]">
     <h2 class="font-bold text-2xl text-center mb-8">
       {clientData.title}
@@ -14,7 +14,9 @@
       class="grid grid-cols-1 sm:grid-cols-2 gap-6 transition-all duration-300"
     >
       {#each clientData.clients as client}
-        <div class="p-4 flex space-x-4 rounded-2xl hover:shadow-md transition">
+        <div
+          class="p-4 flex space-x-4 rounded-2xl hover:shadow-md transition border"
+        >
           <div class="text-primary w-28 h-28 shrink-0">
             <img src={client.src} alt="ảnh khách" class="rounded-xl" />
           </div>
