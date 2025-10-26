@@ -9,123 +9,74 @@
     icon: any;
     title: string;
   }> = [];
-
   import { Button } from "$lib/components/ui/button";
   import Download from "@lucide/svelte/icons/download";
-  import * as Item from "$lib/components/ui/item/index.js";
+  import GlowingBorder from "$lib/components/GlowingBorder.svelte";
 </script>
 
-<section class="hero section">
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <span class="hero-kicker">{highlight}</span>
-      <h1>{headline}</h1>
-      <div class="hero-cta">
-        <Button size="lg" class="p-6">
-          <Download />
-          {ctaText}
-        </Button>
-      </div>
-      <p class="hero-sub">{subheadline}</p>
-      <div class="hero-stats">
-        {#each heroStats as stat}
-          <div class="stat">
-            <span class="stat-value">{stat.value}</span>
-            <span class="stat-label">{stat.label}</span>
-          </div>
-        {/each}
-      </div>
-    </div>
-    <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-1 gap-4">
-      {#each heroFunctions as func}
-        <Item.Root
-          variant="outline"
-          class="bg-[linear-gradient(109deg,rgba(0,92,230,0.1),rgba(0,196,140,0.15))]"
+<section
+  class="relative overflow-hidden bg-linear-to-bl from-primary via-white to-secondary py-16 md:py-24 rounded-b-4xl"
+>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- Left Content -->
+      <div class="flex flex-col space-y-6">
+        <GlowingBorder {highlight} />
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
         >
-          <Item.Media variant="icon">
-            <svelte:component this={func.icon} />
-          </Item.Media>
-          <Item.Content>
-            <Item.Title>{func.title}</Item.Title>
-          </Item.Content>
-        </Item.Root>
-      {/each}
+          {headline}
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+          {subheadline}
+        </p>
+
+        <div class="pt-2">
+          <Button size="lg" class="px-8 py-6 text-base">
+            <Download class="mr-2 h-5 w-5" />
+            {ctaText}
+          </Button>
+        </div>
+
+        <!-- Stats Grid -->
+        {#if heroStats.length > 0}
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6">
+            {#each heroStats as stat}
+              <div class="flex flex-col space-y-1">
+                <span
+                  class="text-2xl md:text-3xl font-bold bg-clip-text text-primary"
+                >
+                  {stat.value}
+                </span>
+                <span class="text-sm text-gray-600">
+                  {stat.label}
+                </span>
+              </div>
+            {/each}
+          </div>
+        {/if}
+      </div>
+
+      <!-- Right Image -->
+      <div class="relative lg:order-last order-first lg:ml-8">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <img
+            src="https://placecats.com/800/600"
+            alt="Hero illustration"
+            class="w-full h-auto object-cover"
+          />
+          <!-- Gradient Overlay -->
+          <div
+            class="absolute inset-0 bg-linear-to-br from-blue-600/10 to-emerald-500/10 mix-blend-overlay"
+          ></div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div
+          class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-linear-to-br from-blue-200/30 to-emerald-200/30 rounded-full blur-3xl"
+        ></div>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .hero-inner {
-    display: grid;
-    gap: clamp(2rem, 4vw, 3rem);
-    align-items: center;
-  }
-
-  @media (min-width: 900px) {
-    .hero-inner {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  .hero-copy {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .hero-kicker {
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.85rem;
-    color: var(--color-primary);
-  }
-
-  h1 {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
-    line-height: 1.1;
-  }
-
-  .hero-sub {
-    font-size: clamp(1rem, 2.2vw, 1.2rem);
-    color: #444c56;
-  }
-
-  .hero-cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-    width: 100%;
-  }
-
-  .hero-stats {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    padding: 1.25rem;
-    border-radius: 1rem;
-    background: linear-gradient(
-      109deg,
-      rgba(0, 92, 230, 0.1),
-      rgba(0, 196, 140, 0.15)
-    );
-  }
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  .stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-  }
-
-  .stat-label {
-    font-size: 0.9rem;
-    color: #4b5563;
-  }
-</style>
