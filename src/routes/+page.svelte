@@ -3,6 +3,7 @@
   import SectorList from "$lib/components/SectorList.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Benefits from "$lib/components/Benefits.svelte";
+  import ClientSection from "$lib/components/ClientsSection.svelte";
 
   import Package from "@lucide/svelte/icons/package";
   import FileText from "@lucide/svelte/icons/file-text";
@@ -147,6 +148,32 @@
       },
     ],
   };
+
+  const clientData = {
+    title: "Khách hàng của chúng tôi",
+    clients: [
+      {
+        src: "https://placecats.com/400/400",
+        name: "Quán A",
+        desc: "Cửa hàng thời trang Luma",
+      },
+      {
+        src: "https://placecats.com/400/400",
+        name: "Quán A",
+        desc: "Cửa hàng thời trang Luma",
+      },
+      {
+        src: "https://placecats.com/400/400",
+        name: "Quán A",
+        desc: "Cửa hàng thời trang Luma",
+      },
+      {
+        src: "https://placecats.com/400/400",
+        name: "Quán A",
+        desc: "Cửa hàng thời trang Luma",
+      },
+    ],
+  };
 </script>
 
 <Hero {...heroData} />
@@ -154,5 +181,7 @@
 <Benefits {benefitData} />
 
 <SectorList {sectorData} />
+
+<ClientSection {clientData} />
 
 <Footer />

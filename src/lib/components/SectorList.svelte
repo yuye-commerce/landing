@@ -45,10 +45,7 @@
             variant="outline"
             class="p-4 flex items-center space-x-4 rounded-2xl hover:shadow-md transition"
           >
-            <Item.Media
-              variant="icon"
-              class="text-primary w-10 h-10 flex-shrink-0"
-            >
+            <Item.Media variant="icon" class="text-primary w-10 h-10 shrink-0">
               <svelte:component this={sector.icon} />
             </Item.Media>
             <Item.Content>
