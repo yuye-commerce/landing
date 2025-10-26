@@ -31,6 +31,7 @@
   import Gift from "@lucide/svelte/icons/gift";
   import Factory from "@lucide/svelte/icons/factory";
   import MoreHorizontal from "@lucide/svelte/icons/more-horizontal";
+  import Closing from "$lib/components/Closing.svelte";
 
   const heroData = {
     highlight: "Giải pháp quản lý bán hàng toàn diện",
@@ -174,6 +175,28 @@
       },
     ],
   };
+
+  const closingData = {
+    title: "Hãy để HaloPOS đồng hành kinh doanh cùng bạn",
+    btn: "Dùng thử miễn phí",
+    contacts: [
+      {
+        icon: Tag,
+        type: "Hotline",
+        desc: "Tư vấn chăm sóc khách hàng",
+      },
+      {
+        icon: Tag,
+        type: "Fanpage",
+        desc: "Tư vấn chăm sóc khách hàng",
+      },
+      {
+        icon: Tag,
+        type: "Web & Mobile",
+        desc: "Tư vấn chăm sóc khách hàng",
+      },
+    ],
+  };
 </script>
 
 <Hero {...heroData} />
@@ -183,5 +206,7 @@
 <SectorList {sectorData} />
 
 <ClientSection {clientData} />
+
+<Closing {closingData} />
 
 <Footer />
